@@ -30,7 +30,7 @@ const Header = () => {
               About
             </li>
           </Link>
-          <Link to="/sing-in">
+          <Link to="/sign-in">
             <li className="sm:inline text-slate-700 hover:underline">
               Sign In
             </li>
