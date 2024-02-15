@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import GoogleAuth from "../components/GoogleAuth";
 
 const SignUp = () => {
   const [formData, setFormData] = useState({});
@@ -69,6 +70,7 @@ const SignUp = () => {
         >
           {loading ? "Loading..." : "Sign Up"}
         </button>
+        <GoogleAuth />
       </form>
       <div className="flex gap-3 mt-5">
         <p>Have an Account?</p>

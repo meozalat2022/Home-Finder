@@ -6,6 +6,7 @@ import {
   signinSuccess,
 } from "../redux/user/userSlice";
 import { useDispatch, useSelector } from "react-redux";
+import GoogleAuth from "../components/GoogleAuth";
 
 const SignIn = () => {
   const [formData, setFormData] = useState({});
@@ -76,6 +77,7 @@ const SignIn = () => {
         >
           {loading ? "Loading..." : "Sign In"}
         </button>
+        <GoogleAuth />
       </form>
       <div className="flex gap-3 mt-5">
         <p>Do Not Have an Account?</p>
