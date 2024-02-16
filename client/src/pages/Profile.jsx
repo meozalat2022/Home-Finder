@@ -37,13 +37,13 @@ const Profile = () => {
       }
     );
   };
-
-  console.log(formData);
+  console.log(formData.avatar);
   useEffect(() => {
     if (file) {
       handleFileUpload(file);
     }
   }, [file]);
+
   return (
     <div className="p-3 max-w-lg mx-auto">
       <h1 className="text-3xl font-semibold text-center my-7">Profile</h1>
@@ -51,9 +51,20 @@ const Profile = () => {
         <img
           onClick={() => fileRef.current.click()}
           className="rounded-full h-24 w-24 object-cover cursor-pointer self-center mt-2 mb-8"
-          src={currentUser.avatar}
+          src={formData.avatar || currentUser.avatar}
           alt="Profile"
         />
+        <p className="text-sm self-center">
+          {fileUploadError ? (
+            <span className="text-red-700">Error Uploading Image</span>
+          ) : filePercentage > 0 && filePercentage < 100 ? (
+            <span className="text-slate-500">{`uploading ${filePercentage} %`}</span>
+          ) : filePercentage === 100 ? (
+            <span className="text-green-500">File uploaded Successfully</span>
+          ) : (
+            ""
+          )}
+        </p>
         <input
           onChange={(e) => setFile(e.target.files[0])}
           hidden
