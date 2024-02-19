@@ -19,7 +19,7 @@ const Header = () => {
     const urlParams = new URLSearchParams(location.search);
     const searchTermFromUrl = urlParams.get("searchTerm");
     if (searchTermFromUrl) {
-      searchTerm(searchTermFromUrl);
+      setSearchTerm(searchTermFromUrl);
     }
   }, [location.search]);
   return (
