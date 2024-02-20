@@ -71,7 +71,7 @@ const Home = () => {
         {offerListings &&
           offerListings.length > 0 &&
           offerListings.map((listing) => (
-            <SwiperSlide>
+            <SwiperSlide key={listing.imageUrls}>
               <div
                 className="h-[500px]"
                 key={listing._id}
