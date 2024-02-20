@@ -85,7 +85,7 @@ const Home = () => {
       </Swiper>
       {/* properties list */}
       <div className="max-w-6xl mx-auto p-3 flex flex-col gap-8 my-10">
-        {offer && offer.length > 0 && (
+        {offerListings && offerListings.length > 0 && (
           <div>
             <div className="my-3">
               <h2 className="text-2xl font-semibold text-slate-600">
